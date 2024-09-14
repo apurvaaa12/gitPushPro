@@ -15,8 +15,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
+
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class GitpushProApplication {
@@ -45,12 +44,7 @@ public class GitpushProApplication {
 
 
 	private static void pushToGitLab() throws GitAPIException, IOException {
-
-//		Authenticator.setDefault(new Authenticator() {
-//			protected PasswordAuthentication getPasswordAuthentication() {
-//				return new PasswordAuthentication(userName, password.toCharArray());
-//			}
-//		});
+		
 
 //		//Pulling the latest changes from git
 //		pullFromGit();
