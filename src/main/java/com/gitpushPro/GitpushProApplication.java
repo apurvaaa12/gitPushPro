@@ -76,7 +76,7 @@ public class GitpushProApplication {
 
 			// Push to the GitLab
 			git.push()
-					.setCredentialsProvider(new UsernamePasswordCredentialsProvider("apurvaaa12", "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"))
+					.setCredentialsProvider(new UsernamePasswordCredentialsProvider("apurvaaa12", "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"))
 					.setRemote("https://github.com/apurvaaa12/gitPushPro.git")
 					.call();
 			logger.info("Pushed the code to git");
