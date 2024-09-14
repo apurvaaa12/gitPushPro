@@ -39,18 +39,17 @@ public class GitpushProApplication {
 	public static void main(String[] args) throws GitAPIException, IOException {
 		SpringApplication.run(GitpushProApplication.class, args);
 		pushToGitLab();
-
+		System.exit(0);
 	}
 
 
 	private static void pushToGitLab() throws GitAPIException, IOException {
-		
 
-//		//Pulling the latest changes from git
-//		pullFromGit();
+		//Pulling the latest changes from git
+		pullFromGit();
 
 		// Open the Git repository
-		try (Git git = Git.open(new File("/Users/sreeapurva.rajasekharuni/Desktop/Apurva/gitPushPro"))) {
+		try (Git git = Git.open(new File(localRepoPath))) {
 
 			// Get the configuration for the repository
 			StoredConfig config = git.getRepository().getConfig();
@@ -70,8 +69,8 @@ public class GitpushProApplication {
 
 			// Push to the GitLab
 			git.push()
-					.setCredentialsProvider(new UsernamePasswordCredentialsProvider("apurvaaa12", "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"))
-					.setRemote("https://github.com/apurvaaa12/gitPushPro.git")
+					.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userName, password))
+					.setRemote(url)
 					.call();
 			logger.info("Pushed the code to git");
 
